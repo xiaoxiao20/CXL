@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/01.register.css">
+    <link rel="stylesheet" href="../css/02.slider.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../lib/jquery-3.4.1(1).js"></script>
+    <script src="../lib/md5.js"></script>
+    <script src="../lib/01.register.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="head">
+            <div class="head-title">
+                <a class="fl" href="https://www.vvic.com/gz" title="搜款网VVIC.com">
+                    <img src="../img/logo_shop.png" alt="">
+                </a>
+                <div class="title">
+                    <span>
+                        欢迎注册
+                    </span>
+                </div>
+                <div class="fr">
+                    <a href="https://www.vvic.com/gz">已有账号，马上登录</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <form action="">
+                <p class="p1">
+                    <label for="phoneID">手机号码</label>
+                    <input type="text" id="phoneID" placeholder="请输入手机号码">
+                </p>
+                <p class="p1">
+                    <label for="passwordID">密码</label>
+                    <input type="password" id="passwordID" placeholder="必须包含字母和数字，8-20个字符">
+                </p>
+                <p class="p1">
+                    <label for="passwordB">确认密码</label>
+                    <input type="password" id="passwordB" placeholder="请确认密码">
+                </p>
+                <div class="p1">
+                    <label class="randowcode" for="code">验证</label>
+                    <div class="slid_wrap"></div>
+                </div>
+                <p class="p1">
+                    <label for="msgID">短信验证码</label>
+                    <input type="text" id="msgID" placeholder="请输入短信验证码">
+                </p>
+                <p class="errorMsg"></p>
+                <div class="agreement">
+                    <input type="checkbox" name="" id="checkbox">
+                    <span>阅读并同意</span>
+                    <span class="sp2">《搜款网用户协议》</span>
+                </div>
+                <input class="registerBtn" type="button" value="注册">
+
+            </form>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+</body>
+<script src="../lib/02.slider.js"></script>
+<script>
+    $('.slid_wrap').slider();
+    $('.footer').load('../../../server/footer.html');
+</script>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/02.slider.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../css/02.login.min.css">
+    <script src="../lib/jquery-3.4.1(1).js"></script>
+    <script src="../lib/03.login.js"></script>
+    <script src="../lib/Cookie.js"></script>
+    <script src="../lib/md5.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="head">
+            <div class="head-title">
+                <a class="fl" href="https://www.vvic.com/gz" title="搜款网VVIC.com">
+                    <img src="../img/logo_shop.png" alt="">
+                </a>
+                <div class="title">
+                    <span>
+                        欢迎登录
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <form action="">
+                <div class="loginTitle">
+                    <div class="phone-title lgTitle current">手机登录</div>
+                    <div class="pwd-title lgTitle">密码登录</div>
+                </div>
+                <div class="phoneLogin login active">
+                    <p class="p1">
+                        <span class="iconfont icon-xingmingyonghumingnicheng"></span>
+                        <input type="text" id="phoneID" placeholder="手机号码">
+                    </p>
+                    <div>
+                        <div class="slide-yz slid_wrap"></div>
+                    </div>
+                    <p class="p1 msgID">
+                        <input type="text" id="msgID" placeholder="请输入短信验证码">
+                    </p>
+                    <p class="errorMsg"></p>
+                    <p class="p2">
+                        <input type="checkbox" name="" id="checkbox1">
+                        <span>下次自动登录</span>
+                        <span class="fr">忘记密码</span>
+                    </p>
+                    <input class="registerBtn" type="button" value="登录">
+                    <p class="p3 fr">
+                        <a href="http://127.0.0.1/demo/client/src/html/01.register.html">
+                            立即注册
+                        </a>
+                    </p>
+
+                </div>
+                <div class="pwdLogin login">
+                    <p class="p1">
+                        <span class="iconfont icon-xingmingyonghumingnicheng"></span>
+                        <input type="text" class="phoneID" placeholder="手机号">
+                    </p>
+                    <p class="p1">
+                        <span class="iconfont icon-mima"></span>
+                        <input type="password" id="passwordID" placeholder="密码">
+                    </p>
+                    <p class="errorMsg1"></p>
+                    <p class="p2">
+                        <input type="checkbox" name="" id="checkbox2">
+                        <span>下次自动登录</span>
+                        <span class="fr">忘记密码</span>
+                    </p>
+                    <input class="registerBtn1" type="button" value="登录">
+                    <p class="p3 fr">
+                        <a href="http://127.0.0.1/demo/client/src/html/01.register.html">
+                            立即注册
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+</body>
+<script src="../lib/02.slider.js"></script>
+<script>
+    $('.slid_wrap').slider();
+    $('.footer').load('../../../server/footer.html');
+</script>
+
+</html>
