@@ -79,13 +79,7 @@ $(() => {
             Cookie.setItem('phone', $.trim($('#phoneID').val()), 2);
         }
     });
-    // r如果cookie中有值
-    // if (Cookie.getItem('phone')) {
-    //     let [url2, val2, str2] = ["../../../server/02.login.php",
-    //         $.trim(Cookie.getItem('phone')),
-    //         '您的免密登录已过期，请重新登录'];
-    //     sendAjax(url2, val2, str2);
-    // }
+
 
     // 02----密码登录验证
     $('.phoneID').blur(function () {
@@ -111,7 +105,7 @@ $(() => {
         // 发送请求，进行验证该手机号码是否注册,验证密码是否正确
         let data = {
             phoneNum: $.trim($('.phoneID').val()),
-            password: md5($.trim($("#passwordID"))).substr(0, 10),
+            password: md5($.trim($("#passwordID").val())).substr(0, 10),
         };
         // console.log(data.phoneNum, data.password)
         // let url1 = "../../../server/02.login2.php";
@@ -119,10 +113,10 @@ $(() => {
         // let str1 = "该用户还没有注册，请前往注册";
         // sendAjax(url1, val1, str1);
         $.ajax({
-            type: "get",
+            type: "post",
             url: "../../../server/02.login2.php",
             data,
-            // dataType: "json",
+            dataType: "json",
             success: function (response) {
                 console.log(response)
                 if (response.status == 'success') {
@@ -135,5 +129,18 @@ $(() => {
                 }
             }
         });
+        // 如果勾选了免登录复选框，进行cookie相关操作
+        if ($('#checkbox2').is(":checked")) {
+            console.log('666')
+            Cookie.setItem('phone', $.trim($('.phoneID').val()), 2);
+        }
     });
+
+    // 如果cookie中有值
+    // if (Cookie.getItem('phone')) {
+    //     let [url2, val2, str2] = ["../../../server/02.login.php",
+    //         $.trim(Cookie.getItem('phone')),
+    //         '您的免密登录已过期，请重新登录'];
+    //     sendAjax(url2, val2, str2);
+    // }
 })

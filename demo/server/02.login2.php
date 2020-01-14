@@ -19,19 +19,18 @@ if(mysqli_num_rows($result)==0){
     // 05--继续检查该密码是否正确
     $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
      $password1 = $data[0]["password"];
-     $password2=md5($pwd).substr(0,10);
-     echo "$password1,.'好的'$password2";
-    //  if($password1!=$pwd){
-    //     echo '{
-    //         "status":"error",
-    //         "msg":"密码输入错误"
-    //     }';
-    //  }
-    //  else{
-    //     echo '{
-    //         "status":"success",
-    //         "msg":"登录成功"
-    //     }';
-    //  } 
-}
+    //  echo "$password1,.'好的'$pwd";
+      if($password1!=$pwd){
+         echo '{
+             "status":"error",
+             "msg":"密码输入错误"
+         }';
+      }
+      else{
+         echo '{
+             "status":"success",
+             "msg":"登录成功"
+         }';
+      } 
+ }
 ?>

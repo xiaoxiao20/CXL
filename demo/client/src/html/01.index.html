@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/index.min.css">
-    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+    <!-- <link rel="stylesheet" href="../css/index.min.css"> -->
+    <link rel="stylesheet" href="../css/index.css">
     <script src="../lib/jquery-3.4.1(1).js"></script>
+    <script src="../lib/data.js"></script>
     <script src="../lib/index.js"></script>
+    <script src="../lib/04.banner.js"></script>
+    <script src="../lib/04.banner2.js"></script>
+    <script src="../lib/04.banner3.js"></script>
     <title>Document</title>
 </head>
 
@@ -207,13 +211,175 @@
         </div>
         <div class="banner1">
             <div class="main4">
-                <div class="ban-left fl"></div>
-                <div class="ban1 fl"></div>
-                <div class="ban2 fl"></div>
-                <div class="ban-right fl"></div>
+                <div class="ban-left fl">
+                    <ul class="erji-lf">
+                        <!-- <li>
+                            <p>女装</p>
+                            <a href="###">连衣裤</a>
+                        </li>-->
+                    </ul>
+                    <div class="erji-rg">
+                        <!-- <div class="appendDiv">
+                            <ul class="fl ul-rg">
+                                <div class='ulTitle'>
+                                        <p></p>
+                                    </div>
+                                    <li>
+                                        <a href=""></a>
+                                    </li>
+                            </ul>
+                            <div class="erji-img fr">
+                                <img src="../img/ban24.jpg" alt="">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="ban-center ban1 fl">
+                    <!-- <div class='ban1-1'>
+                        <span>
+                            <</span> <span>>
+                        </span>
+                        <div class="imgBan">
+                            <img src="../img/ban1.jpg" alt="">
+                        </div>
+                    </div> -->
+                </div>
+                <div class="ban2 fl">
+
+                </div>
+                <div class="ban-right fl">
+                    <div class="banRg-top">
+                        <div class="title">欢迎来到搜款网</div>
+                        <div>
+                            <a class="btn btn1" href="./03.login.html">立即登录</a>
+                        </div>
+                        <div>还没有账号</div>
+                        <div>
+                            <a class="btn btn2" href="./02.register.html">免费注册</a>
+                        </div>
+                    </div>
+                    <div class="banRg-bt">
+                        <div class="banRg1">
+                            <span class="active">网站通告</span><span>档口消息</span>
+                        </div>
+                        <div class="banRg2">
+                            <div class="tab tab1 active1">
+
+                            </div>
+                            <div class="tab tab2"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="banner2">
+            <div class="main5">
+                <div class="ban-left fl">
+                    <p class="title">市场</p>
+                    <div class="memu">
+                        <!-- <a href="./01.index.html"></a> -->
+                    </div>
+                    <div class="moreMemu">
+                        <span>更多市场</span><span>收起市场</span>
+                    </div>
+                </div>
+                <div class="ban2-1 fl">
+                    <!-- <span>
+                        <</span> <span>>
+                    </span> -->
+                    <!-- <div class="imgBan">
+                            <img src="../img/ban31.jpg" alt="">
+                            <img src="../img/ban31.jpg" alt="">
+                        </div> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="bg2">
+            <a href="./01.index.html">
+                <img src="../img/bg2.jpg" alt=""></a>
+        </div>
+        <script src="../lib/06.main-content.js"></script>
+        <script src="../lib/06.main-content2.js"></script>
     </div>
 </body>
+<script>
+
+    //001--- 轮播图
+    $.getJSON('../lib/04.banner.json', function (data) {
+        console.log(data);
+        (new Banner(data[0], 570)).init();
+        (new Banner3(data[1], 200)).init();
+        (new Banner2(data[2], 990)).init();
+        setInterval(function () {
+
+        }, 1000);
+    });
+    // 002---左侧二级导航
+    $.getJSON('../lib/05.erji.json', function (data) {
+        // console.log(data);
+        // 01--拼接左边栏
+        let strA = data[0].map(function (val, index) {
+            let html1 = val.memu.map(function (value, key) {
+                return `<a href='###'>${value}</a>`
+            }).join('');
+            return ` <li>
+                    <p>${val.title}</p>${html1}
+                </li>`
+        }).join('');
+        // console.log(strA)
+        $('.erji-lf').append(strA);
+        // 02--拼接右边栏
+        let strB = data[1].map(function (val, index) {
+            let html = val.title1.map(function (val, key) {
+                return `<p>${val}</p>`
+            }).join('');
+            let html1 = val.memu2.map(function (val2, value) {
+                let html2 = val2.map(function (val3, num) {
+                    return ` <a>${val3}</a>`
+                }).join('');
+                return `<li class="fl">${html2}</li>`
+            }).join('');
+            return ` 
+            <div class="appendDiv">
+            <ul class="fl ul-rg">
+            <div class='ulTitle'>${html}</div>${html1} 
+             </ul>
+            <div class="erji-img fr">
+                <img src="${val.src}" alt="">
+             </div>
+            </div>`
+        }).join('');
+        $('.erji-rg').append(strB);
+    });
+    // 003--mainContent
+    (new MainContent(mainContent1)).init();
+    (new MainContent2(mainContent2)).init();
+
+
+    /*
+    let arr = [];
+    $('.menu_item').each(function (index, val) {
+        let o = {};
+        o.title = $(val).find('span').text();
+        o.memu = [];
+        $(val).find('.item').each(function (index, ele) {
+            o.memu.push($(ele).text());
+        });
+        arr.push(o);
+    });
+    $('.nav_item').eq(0).each(function (index, val) {
+        let o2 = {};
+        o2.title1 = $(val).find('dt').text();
+        o2.memu2 = [];
+        $(val).find('dl').each(function (index, val) {
+            let o1 = [];
+            o1.push($(val).find('li').text());
+            o2.memu2.push(o1)
+        })
+        arr.push(o2);
+    })
+    */
+</script>
 
 </html>
