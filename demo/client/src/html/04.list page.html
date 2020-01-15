@@ -1,12 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/03.list page.min.css">
+    <!-- <link rel="stylesheet" href="../css/03.list page.css"> -->
+    <script src="../lib/jquery-3.4.1(1).js"></script>
+    <script src="../lib/07.list page.js"></script>
+    <script src="../lib/screen.js"></script>
+
 </head>
+
 <body>
-    
+    <div class="header-load">
+    </div>
+    <div class="descrip">
+        <div class="classic clearfix">
+            <span class="fl">所有类目</span><span class="fr">超过8000件相关商品</span>
+        </div>
+        <div class="sreen">
+            <div class="sreen-city">
+                <div class="city-lf">站点</div>
+                <div class="sreen-rg">
+                    <a href="./01.index.html"></a>
+                </div>
+            </div>
+            <div class="scar"></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+        </div>
+    </div>
+    <div class="content clearfix">
+        <div class="btn-class">
+            <span class="typeBtn" data-type="default">默认</span>
+            <span class="typeBtn" data-type="dsc">按照价格从高到低</span>
+            <span class="typeBtn" data-type="asc">按照价格从低到高</span>
+        </div>
+        <ul class="Ulist clearfix">
+            <!-- <li>
+                <div class="pic">
+                    <img class="bigpic"
+                        src="//img.alicdn.com/bao/uploaded/i2/56365355/O1CN016xIVFg1pQdVVJVkj0_!!56365355.jpg_230x230.jpg"
+                        alt="">
+                    <img class="minlogo" src="//src.vvic.com/statics/v2/css/img/slzz/slzz-shop-adpic.png" alt="">
+                </div>
+                <div class="desc">
+                    <div>
+                        <span class="price">￥58</span><span class="sales">一件代发</span>
+                    </div>
+                    <p class="title">
+                        <a href="./01.index.html">实拍春季新款气质喇叭袖网纱连衣裙女吊带内搭中长裙两件套</a>
+                    </p>
+                    <div class="addr">
+                        <span class="adr">大时代 2楼 230</span><span class="j-btn">8442#</span>
+                    </div>
+                    <div class="foot">
+                        <span>
+                            <img src="//src.vvic.com/statics/v2/css/img/slzz/slzz-item.png" alt="">
+                        </span>
+                        <span></span>
+                        <span>DQ快时尚</span>
+                        <span></span>
+                    </div>
+                </div>
+            </li> -->
+        </ul>
+        <div class="pages">
+        </div>
+    </div>
+    <div class="hot-goods">
+        <div class="hot-top">
+            <span class="title">人气商品</span><span class="fr">1/1</span>
+        </div>
+        <div class="hot-bt clearfix">
+            <ul class="clearfix">
+            </ul>
+        </div>
+    </div>
+    <div class="right-goods">
+        <div class="hot-top">
+            <span class="title">推荐商品</span>
+        </div>
+        <ul class="clearfix">
+        </ul>
+    </div>
+    <div class="footer"></div>
 </body>
+<script>
+    // 003--申请头部
+    $('.header-load').load('../../../server/header.html', function () {
+        $.getScript('../lib/header.js')
+    });
+    // 004--申请尾部
+    $('.footer').load('../../../server/footer.html');
+
+</script>
+
 </html>

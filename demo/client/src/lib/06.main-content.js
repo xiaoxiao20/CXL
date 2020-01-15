@@ -46,7 +46,8 @@ class MainContent {
 
         let html = `${str}${str1}`
         $(this.root).append(html);
-        $('#soukuan').append(this.root);
+        $(this.root).insertBefore(".footer");
+        // $('#soukuan').append(this.root);
     }
     setIntervalEvent() {
         // 自动切换
