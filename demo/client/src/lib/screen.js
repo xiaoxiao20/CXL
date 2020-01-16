@@ -140,4 +140,16 @@ let sreenDate = [
         "服务",
         "风格"
     ]
+];
+let sreenSrc = [
+    "https://imgmodel.vvic.com/upload/1566870032520_456607_face.jpg",
+    "https://imgmodel.vvic.com/upload/1566304679290_924743_face.jpg",
+    "//imgmodel.vvic.com/upload/1570167756124_433708_face.jpg",
+    "https://imgmodel.vvic.com/model/small/18.jpg",
+    "https://imgmodel.vvic.com/model/small/19.jpg",
+    "https://imgmodel.vvic.com/model/small/06.jpg",
+    "https://imgmodel.vvic.com/model/small/07.jpg",
+    "https://imgmodel.vvic.com/model/small/22.jpg",
+    "https://imgmodel.vvic.com/model/small/08.jpg",
+    "https://imgmodel.vvic.com/model/small/14.jpg"
 ]

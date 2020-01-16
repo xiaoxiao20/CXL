@@ -39,11 +39,15 @@
 
 .header-load .main1 .content .rig-title li {
   height: 100%;
-  width: 60px;
+  padding-right: 15px;
   text-align: center;
   line-height: 30px;
   position: relative;
   cursor: pointer;
+}
+
+.header-load .main1 .content .rig-title li a {
+  color: black;
 }
 
 .header-load .main1 .content .rig-title li .showDisp {

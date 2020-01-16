@@ -14,21 +14,23 @@ $(() => {
 
     // 二级导航显示隐藏 
     $('.banner1 .erji-lf').on('mouseenter', 'li', function () {
-        $(this).mouseenter(function () {
-            let num = $(this).index();
-            // console.log(num);
-            $('.erji-rg').eq(num).stop().animate({
-                'width': '800px'
-            }, 800);
-            // console.log($('.erji-rg').eq(num));
+        let num = $(this).index();
+        // console.log(num);
+        $('.erji-rg').stop().animate({
+            'width': '800px'
+        }, 800).mouseenter(function () {
+            $('.erji-lf').find('li').eq(num).trigger('mouseenter');
         }).mouseleave(function () {
-            let num = $(this).index();
-            $('.erji-rg').eq(num).stop().animate({
+            $(this).css({
                 'width': '0'
-            }, 800);
+            })
         });
-    })
-
+    }).on('mouseleave', 'li', function () {
+        let num = $(this).index();
+        $('.erji-rg').eq(num).stop().animate({
+            'width': '0'
+        }, 800);
+    });
     // 轮播图右侧的选项卡
     $('.banRg1 span').mouseenter(function () {
         $(this).addClass('active').siblings().removeClass('active')
@@ -48,17 +50,20 @@ $(() => {
     let banBtDataStr = banBtData.map(function (val, index) {
         return `<a href="./01.index.html">${val}</a>`
     }).join('');
-    $('.banner2').find('.memu').append(banBtDataStr);
+    $('.banner2').find('.memu').html(banBtDataStr);
     // 市场展开和收起
-    $('.moreMemu').find('span').eq(0).click(function () {
-        $('.banner2').find('.memu').css('height', '312px');
-        $(this).css('display', 'none');
-        $('.moreMemu').find('span').eq(1).css('display', 'block');
-        $('.moreMemu').find('span').eq(1).click(function () {
-            $('.banner2').find('.memu').css('height', '184px');
-            $(this).css('display', 'none');
-            $('.moreMemu').find('span').eq(0).css('display', 'block');
-        })
-
+    $('.moreMemu').find('span').click(function () {
+        let H = $(this).parent().prev().css('height').slice(0, -2) * 1;
+        console.log(H);
+        if (H > 184) {
+            console.log('111')
+            $(this).parent().prev().css('height', '500px')
+            $(this).text('收起市场')
+        }
+        else {
+            $(this).parent().prev().css('height', '184px')
+            $(this).text('更多市场');
+        }
     });
-})
+
+});

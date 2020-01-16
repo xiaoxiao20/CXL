@@ -1,6 +1,7 @@
 <?php
 // 获取数据库的数据总长度，计算分页的页数并返回
 $db=mysqli_connect("127.0.0.1","root","","demo");
+
 $sql="SELECT * FROM listpage";
 
 $result=mysqli_query($db,$sql);

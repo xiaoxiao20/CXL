@@ -39,7 +39,7 @@ $(() => {
             data: `page=${index}&type=${type}`,
             dataType: "json",
             success: function (response) {
-                // console.log(response);
+                console.log(response);
                 randler(response, index);
             }
         });
@@ -88,7 +88,7 @@ $(() => {
             url,
             dataType: "json",
             success: function (response) {
-                console.log(response)
+                // console.log(response)
                 let str = response.map(function (val, key) {
                     return ` <li>
                             <div class="pic">
@@ -108,13 +108,46 @@ $(() => {
 
 
     // screen页
+
     let str = sreenDate.map(function (val, index) {
         let html = val.map(function (val, key) {
             return `<a href="./01.index.html">${val}</a>`
         }).join('');
         return `<div class="sreen-rg">${html}</div>`
-    }).join('');
-    console.log($('.sreen').children())
+    });
+    $('.sreen').children().each(function (index, val) {
+        $(this).append(str[index])
+    });
+    // console.log($('.model').find('.sreen-rg').find('a'));
+    $('.model').find('.sreen-rg').find('a').each(function (index, val) {
+        let html = sreenSrc.map(function (val, key) {
+            return `<div>
+                        <img src="${val}" alt="">
+                    </div>`
+        });
+        $(this).append(html[index]);
+    });
+    $('.model').find('.sreen-rg').find('a').mouseenter(function () {
+        $(this).children('div').css('display', 'block');
+    }).mouseleave(function () {
+        $(this).children('div').css('display', 'none');
+    })
+
+    // screen页的展开和收起
+    $('.market').find('span').click(function () {
+        let H = $('.market .sreen-rg').css('height').slice(0, -2) * 1;
+        let parentH = $(this).parent().css('height').slice(0, -2) * 1;
+        console.log(H, parentH)
+        if (H > parentH) {
+            $(this).parent().css('height', H + 'px');
+            $(this).text('收起');
+        }
+        else {
+            $(this).parent().css('height', '36px');
+            $(this).text('更多');
+        }
+    });
+
 
     // 数据获取
     // let arrx = [];

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详情页</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/05.details.css">
+    <script src="../lib/jquery-3.4.1(1).js"></script>
+    <script src="../lib/11.details.js"></script>
+</head>
+
+<body>
+    <div class="header-load"></div>
+    <div class="content">
+        <div class="Pic">
+            <div class="minpic">
+                <div class="minbox">
+                    <img src="//img1.vvic.com/upload/1565518590385_935037.jpg?x-oss-process=image/resize,mfit,h_500,w_500"
+                        alt="">
+                </div>
+                <div class="bigbox">
+                    <img src="//img1.vvic.com/upload/1565518590385_935037.jpg?x-oss-process=image/resize,mfit,h_500,w_500"
+                        alt="">
+                </div>
+            </div>
+            <div class="minpics">
+                <ul class="clearfix">
+                    <li class="active">
+                        <img src="//img1.vvic.com/upload/1565518576089_230841.jpg?x-oss-process=image/resize,mfit,h_60,w_60"
+                            alt="">
+                    </li>
+                    <li>
+                        <img src="//img1.vvic.com/upload/1565518579104_721166.jpg?x-oss-process=image/resize,mfit,h_60,w_60"
+                            alt="">
+                    </li>
+                    <li>
+                        <img src="//img1.vvic.com/upload/1565518587030_726006.jpg?x-oss-process=image/resize,mfit,h_60,w_60"
+                            alt="">
+                    </li>
+                    <li>
+                        <img src="//img1.vvic.com/upload/1565518590385_935037.jpg?x-oss-process=image/resize,mfit,h_60,w_60"
+                            alt="">
+                    </li>
+                    <li>
+                        <img src="//img1.vvic.com/upload/1565518593955_692733.png?x-oss-process=image/resize,mfit,h_60,w_60"
+                            alt="">
+                    </li>
+                    <li>
+                        <img src="//img1.vvic.com/upload/1565518606270_94020.jpg?x-oss-process=image/resize,mfit,h_60,w_60"
+                            alt="">
+                    </li>
+                </ul>
+
+            </div>
+            <div class="clickmove">
+                <span class="prev fl">
+                    <</span> <span class="next fr">>
+                </span>
+            </div>
+            <div class="links"></div>
+        </div>
+        <div class="desc"></div>
+    </div>
+    <div class="footer"></div>
+</body>
+<script>
+    // 申请头部
+    $('.header-load').load('../../../server/dat-head.html', function () {
+        $('.rig-title').append($("<li class='home page'><a href='./ 01.index.html'>搜款网首页</a></li>"))
+        $.getScript('../lib/11.details.js');
+    });
+    // 申请尾部
+    $('.footer').load('../../../server/footer.html');
+
+</script>
+
+</html>

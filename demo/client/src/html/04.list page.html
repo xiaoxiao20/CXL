@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>商品列表页</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/03.list page.min.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../css/04.erji.nav.css">
     <!-- <link rel="stylesheet" href="../css/03.list page.css"> -->
     <script src="../lib/jquery-3.4.1(1).js"></script>
     <script src="../lib/07.list page.js"></script>
@@ -20,24 +22,41 @@
 <body>
     <div class="header-load">
     </div>
+    <div class="ban-left"></div>
     <div class="descrip">
         <div class="classic clearfix">
             <span class="fl">所有类目</span><span class="fr">超过8000件相关商品</span>
         </div>
         <div class="sreen">
             <div class="sreen-city">
-                <div class="city-lf">站点</div>
-                <div class="sreen-rg">
-                    <a href="./01.index.html"></a>
+                <div class="city-lf sreen-lf">站点</div>
+                <!-- <div class="sreen-rg">
+                    <a href=""></a>
+                </div> -->
+            </div>
+            <div class="scar">
+                <div class="scar-lf sreen-lf">分类</div>
+            </div>
+            <div class="coat">
+                <div class="coat-lf sreen-lf">上装/外套</div>
+            </div>
+            <div class="skirt">
+                <div class="skirt-lf sreen-lf">裙装</div>
+            </div>
+            <div class="pants">
+                <div class="pants-lf sreen-lf">裤装</div>
+            </div>
+            <div class="market">
+                <div class="market-lf sreen-lf">市场</div>
+                <span class="fr">更多</span>
+            </div>
+            <div class="model">
+                <div class="model-lf sreen-lf">模特
                 </div>
             </div>
-            <div class="scar"></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
+            <div class="filter">
+                <div class="filter-lf sreen-lf">筛选</div>
+            </div>
         </div>
     </div>
     <div class="content clearfix">
@@ -47,33 +66,6 @@
             <span class="typeBtn" data-type="asc">按照价格从低到高</span>
         </div>
         <ul class="Ulist clearfix">
-            <!-- <li>
-                <div class="pic">
-                    <img class="bigpic"
-                        src="//img.alicdn.com/bao/uploaded/i2/56365355/O1CN016xIVFg1pQdVVJVkj0_!!56365355.jpg_230x230.jpg"
-                        alt="">
-                    <img class="minlogo" src="//src.vvic.com/statics/v2/css/img/slzz/slzz-shop-adpic.png" alt="">
-                </div>
-                <div class="desc">
-                    <div>
-                        <span class="price">￥58</span><span class="sales">一件代发</span>
-                    </div>
-                    <p class="title">
-                        <a href="./01.index.html">实拍春季新款气质喇叭袖网纱连衣裙女吊带内搭中长裙两件套</a>
-                    </p>
-                    <div class="addr">
-                        <span class="adr">大时代 2楼 230</span><span class="j-btn">8442#</span>
-                    </div>
-                    <div class="foot">
-                        <span>
-                            <img src="//src.vvic.com/statics/v2/css/img/slzz/slzz-item.png" alt="">
-                        </span>
-                        <span></span>
-                        <span>DQ快时尚</span>
-                        <span></span>
-                    </div>
-                </div>
-            </li> -->
         </ul>
         <div class="pages">
         </div>
@@ -96,13 +88,18 @@
     </div>
     <div class="footer"></div>
 </body>
+<!-- 001--申请头部 -->
+<script src="../lib/10.getHead.js"></script>
 <script>
-    // 003--申请头部
-    $('.header-load').load('../../../server/header.html', function () {
-        $.getScript('../lib/header.js')
-    });
-    // 004--申请尾部
+
+    // 002--申请尾部
     $('.footer').load('../../../server/footer.html');
+    // 002--申请二级导航
+    $('.ban-left').load("../../../server/erji-nav.html", function () {
+        $.getScript('../lib/09.erji-nav.js');
+        // $('.ban-left').insertBefore($('.ban-center'))
+    })
+
 
 </script>
 

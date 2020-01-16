@@ -19,7 +19,7 @@
     <script src="../lib/06.main-content.js"></script>
     <script src="../lib/06.main-content2.js"></script>
 
-    <title>Document</title>
+    <title>搜款网首页</title>
 </head>
 
 <body>
@@ -33,39 +33,14 @@
             <div class="main4">
                 <div class="ban-left fl">
                     <ul class="erji-lf">
-                        <!-- <li>
-                            <p>女装</p>
-                            <a href="###">连衣裤</a>
-                        </li>-->
+                        <!-- <li></li> -->
+                        <div class="erji-rg">
+                        </div>
                     </ul>
-                    <div class="erji-rg">
-                        <!-- <div class="appendDiv">
-                            <ul class="fl ul-rg">
-                                <div class='ulTitle'>
-                                        <p></p>
-                                    </div>
-                                    <li>
-                                        <a href=""></a>
-                                    </li>
-                            </ul>
-                            <div class="erji-img fr">
-                                <img src="../img/ban24.jpg" alt="">
-                            </div>
-                        </div> -->
-                    </div>
                 </div>
                 <div class="ban-center ban1 fl">
-                    <!-- <div class='ban1-1'>
-                        <span>
-                            <</span> <span>>
-                        </span>
-                        <div class="imgBan">
-                            <img src="../img/ban1.jpg" alt="">
-                        </div>
-                    </div> -->
                 </div>
                 <div class="ban2 fl">
-
                 </div>
                 <div class="ban-right fl">
                     <div class="banRg-top">
@@ -100,7 +75,7 @@
                         <!-- <a href="./01.index.html"></a> -->
                     </div>
                     <div class="moreMemu">
-                        <span>更多市场</span><span>收起市场</span>
+                        <span>更多市场</span>
                     </div>
                 </div>
                 <div class="ban2-1 fl">
@@ -124,8 +99,9 @@
         </div>
     </div>
 </body>
+<!-- 左侧的二级导航 -->
+<script src="../lib/09.erji-nav.js"></script>
 <script>
-
     //001--- 轮播图
     $.getJSON('../lib/04.banner.json', function (data) {
         console.log(data);
@@ -133,44 +109,6 @@
         (new Banner3(data[1], 200)).init();
         (new Banner2(data[2], 990)).init();
     });
-    // 002---左侧二级导航
-    $.getJSON('../lib/05.erji.json', function (data) {
-        // console.log(data);
-        // 01--拼接左边栏
-        let strA = data[0].map(function (val, index) {
-            let html1 = val.memu.map(function (value, key) {
-                return `<a href='###'>${value}</a>`
-            }).join('');
-            return ` <li>
-                    <p>${val.title}</p>${html1}
-                </li>`
-        }).join('');
-        // console.log(strA)
-        $('.erji-lf').append(strA);
-        // 02--拼接右边栏
-        let strB = data[1].map(function (val, index) {
-            let html = val.title1.map(function (val, key) {
-                return `<p>${val}</p>`
-            }).join('');
-            let html1 = val.memu2.map(function (val2, value) {
-                let html2 = val2.map(function (val3, num) {
-                    return ` <a>${val3}</a>`
-                }).join('');
-                return `<li class="fl">${html2}</li>`
-            }).join('');
-            return ` 
-            <div class="appendDiv">
-            <ul class="fl ul-rg">
-            <div class='ulTitle'>${html}</div>${html1} 
-             </ul>
-            <div class="erji-img fr">
-                <img src="${val.src}" alt="">
-             </div>
-            </div>`
-        }).join('');
-        $('.erji-rg').append(strB);
-    });
-
     (new MainContent(mainContent1)).init();
     (new MainContent2(mainContent2)).init();
 

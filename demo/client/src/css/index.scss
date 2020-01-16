@@ -45,13 +45,13 @@ img{
              .ban-left{
                  width: 160px;
                  height: 100%;
-                 
                  padding: 0 10px;
                  background-color: white;
                  margin-right: 10px;
-                 position: relative;
+                 
                  .erji-lf{
                  height: 100%;
+                 position: relative;
                   li{
                       height: 80px;
                       border-bottom: 1px dashed #ccc;
@@ -71,73 +71,74 @@ img{
                        //  margin-right: 5px;
                     }
                   }
-                 }
-                 .erji-rg{
-                     width: 0;
-                     overflow: hidden;
-                    //  width: 800px;
-                     height: 315px;
-                     position: absolute;
-                     top: 0;
-                     left: 190px;
-                     background-color: white;
-                     z-index: 888;
-                     .appendDiv{
-                         width: 100%;
-                         height: 100%;
-                         position: absolute;
-                         top: 0;
-                         left: 0;
-                     .ul-rg{
-                         width: 550px;
-                         height: 100%;
-                         padding: 0 10px;
-                         .ulTitle{
-                            p{
-                                display: inline-block;
-                               width: 100px;
-                                font-size: 14px;
-                                color: #333;
-                                padding-bottom: 10px;
-                                border-bottom: 1px dashed #ccc;
-                                margin-right: 30px; 
-                                &:nth-of-type(1){
-                                    width: 250px;
-                                } 
-                            }
-                         }
-                         li{
-                            //  margin-right: 30px;
-                             width: 280px;
-                             height: 100%;
-            
-            a{
-                display: inline-block;
-                width: 100px;
-                height: 22px;
-                text-align: left;
-                font-size: 12px;
-                color: #333;
-                line-height: 22ox;
-            }             
-            &:nth-of-type(2){
-                width: 120px;
-            }   
-            &:nth-of-type(3){
-                width: 110px;
-            }  
-           }
-                            }
-                     .erji-img{
-                         width: 220px;
-                         height: 315px;
-                   img{
-                  width: 100%;
-                  height: 315px;
-                         }
-                     }
-                 }
+                  .erji-rg{
+                    width: 0;
+                    overflow: hidden;
+                   //  width: 800px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 170px;
+                    background-color: white;
+                    z-index: 888;
+                    .appendDiv{
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    .ul-rg{
+                        width: 550px;
+                        height: 100%;
+                        padding: 0 10px;
+                        .ulTitle{
+                           p{
+                               display: inline-block;
+                              width: 100px;
+                               font-size: 14px;
+                               color: #333;
+                               padding-bottom: 10px;
+                               border-bottom: 1px dashed #ccc;
+                               margin-right: 30px; 
+                               &:nth-of-type(1){
+                                   width: 250px;
+                               } 
+                           }
+                        }
+                        li{
+                           //  margin-right: 30px;
+                            width: 280px;
+                            height: 100%;
+           
+           a{
+               display: inline-block;
+               width: 100px;
+               height: 22px;
+               text-align: left;
+               font-size: 12px;
+               color: #333;
+               line-height: 22ox;
+           }             
+           &:nth-of-type(2){
+               width: 120px;
+           }   
+           &:nth-of-type(3){
+               width: 110px;
+           }  
+          }
+                           }
+                    .erji-img{
+                        width: 220px;
+                        height: 315px;
+                  img{
+                 width: 100%;
+                 height: 315px;
+                        }
+                    }
                 }
+               }
+                 }
+             
              }
              .ban-center{
                  width: 570px;
@@ -299,8 +300,9 @@ img{
              padding: 0 80px;
              .ban-left{
                 width: 160px;
-               min-height: 100%;
+                height: 100%;
                 background-color: white;
+                overflow: hidden;
                 margin-right: 10px;
                 padding: 0 10px;
 
@@ -313,7 +315,6 @@ img{
                 .memu{
                     width: 100%;
                     height: 184px;
-                    overflow: hidden;
                     a{
                         float: left;
                         width: 48px;
@@ -326,16 +327,17 @@ img{
                 }
                 .moreMemu{
                     width: 100%;
-                    height: 18px;
+                    height:30px;
+                    background-color: white;
+                    z-index: 999;
+                   
                     text-align: center;
                     span{
                         display: block;
                         font-size: 12px;
                         color: #6c6c6c;
                         cursor: pointer;
-                        &:last-child{
-                            display: none;
-                        }
+                       
                     }
                 }
             }

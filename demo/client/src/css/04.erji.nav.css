@@ -1,0 +1,109 @@
+.ban-left {
+  width: 160px;
+  height: 315px;
+  padding: 0 10px;
+  background-color: white;
+  margin-right: 10px;
+  display: none;
+  border: 1px solid #eeeaea;
+  position: absolute;
+  left: 80px;
+}
+
+.ban-left .erji-lf {
+  height: 100%;
+  position: relative;
+}
+
+.ban-left .erji-lf li {
+  height: 80px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.ban-left .erji-lf li p {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.ban-left .erji-lf li a {
+  display: inline-block;
+  font-size: 12px;
+  color: #333;
+  width: 48px;
+  height: 18px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.ban-left .erji-lf .erji-rg {
+  width: 0;
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 170px;
+  background-color: white;
+  z-index: 888;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .ul-rg {
+  width: 550px;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .ul-rg .ulTitle p {
+  display: inline-block;
+  width: 100px;
+  font-size: 14px;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+  margin-right: 30px;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .ul-rg .ulTitle p:nth-of-type(1) {
+  width: 250px;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .ul-rg li {
+  width: 280px;
+  height: 100%;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .ul-rg li a {
+  display: inline-block;
+  width: 100px;
+  height: 22px;
+  text-align: left;
+  font-size: 12px;
+  color: #333;
+  line-height: 22ox;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .ul-rg li:nth-of-type(2) {
+  width: 120px;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .ul-rg li:nth-of-type(3) {
+  width: 110px;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .erji-img {
+  width: 220px;
+  height: 315px;
+}
+
+.ban-left .erji-lf .erji-rg .appendDiv .erji-img img {
+  width: 100%;
+  height: 315px;
+}

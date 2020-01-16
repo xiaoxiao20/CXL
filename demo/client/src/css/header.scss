@@ -28,14 +28,17 @@
            .rig-title{
                height: 100%;
                display: flex;
-             
                li{
                    height: 100%;
-                   width: 60px;
+                //    width: 60px;
+                padding-right: 15px;
                    text-align: center;
                    line-height: 30px;
                    position: relative;
                    cursor: pointer;
+                   a{
+                       color: black;
+                   }
                    .showDisp{
                        background-color: white;
                        border: 1px solid #e5e5e5;
