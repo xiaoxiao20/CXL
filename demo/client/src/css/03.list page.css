@@ -179,6 +179,34 @@ html .content .Ulist li .pic .minlogo, body .content .Ulist li .pic .minlogo {
   left: 0;
 }
 
+html .content .Ulist li .pic .showCar, body .content .Ulist li .pic .showCar {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(239, 54, 100, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+html .content .Ulist li .pic .showCar span, body .content .Ulist li .pic .showCar span {
+  float: left;
+  font-size: 16px;
+  color: #f5eaea;
+  line-height: 40px;
+  text-align: center;
+  width: 66px;
+}
+
+html .content .Ulist li .pic .showCar span:nth-of-type(1), body .content .Ulist li .pic .showCar span:nth-of-type(1) {
+  width: 100px;
+  border-right: 1px solid #c0bebe;
+}
+
+html .content .Ulist li .pic .showCar span:nth-of-type(2), body .content .Ulist li .pic .showCar span:nth-of-type(2) {
+  width: 60px;
+  border-right: 1px solid #c0bebe;
+}
+
 html .content .Ulist li .desc, body .content .Ulist li .desc {
   padding: 4px 10px 0;
 }

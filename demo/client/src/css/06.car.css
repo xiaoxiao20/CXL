@@ -1,0 +1,39 @@
+.shopping-content {
+  padding: 0 85px;
+}
+
+.shopping-content .content-top {
+  height: 30px;
+  padding-bottom: 10px;
+}
+
+.shopping-content .content-top .sum span {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.shopping-content .content-top .sum span:first-child {
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+.shopping-content .content-top .sum .itemNum {
+  color: #ef3664;
+}
+
+.shopping-content .content-top .count span {
+  font-size: 14px;
+  line-height: 30px;
+  color: #ef3664;
+}
+
+.shopping-content .content-top .count span:first-child {
+  color: black;
+  margin-right: 10px;
+}
+
+.shopping-content .content-top .count input {
+  width: 50px;
+  height: 30px;
+  margin-left: 10px;
+}

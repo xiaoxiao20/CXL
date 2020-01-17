@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜款网-购物车页面</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/06.car.css">
+    <script src="../lib/jquery-3.4.1(1).js"></script>
+</head>
+
+<body>
+    <div class="header-load"></div>
+    <div class="shopping-content clearfix">
+        <div class="content-top">
+            <div class="fl sum">
+                <span>全部商品</span><span class="itemNum">0</span>
+            </div>
+            <div class="fr count">
+                <span>已选商品(不含运费):</span><span>￥</span><span class="total">0:00</span>
+                <input type="button" value="结算">
+            </div>
+        </div>
+        <div class="itemShow"></div>
+        <div class="content-foot"></div>
+    </div>
+    <div class="footer"></div>
+</body>
+<script>
+    // 申请头部
+    $('.header-load').load('../../../server/dat-head.html', function () {
+        $('.rig-title').append($("<li class='home page'><a href='./ 01.index.html'>搜款网首页</a></li>"))
+        $.getScript('../lib/header.js');
+    });
+    // 申请尾部
+    $('.footer').load('../../../server/footer.html');
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+.shopping-content{
+    padding: 0 85px;
+    .content-top{
+        height: 30px;
+        padding-bottom: 10px;
+   .sum{
+       span{
+        font-size: 14px;
+        line-height: 30px;
+           &:first-child{
+               font-weight: 600;
+               margin-right: 15px;
+           }
+       }
+       .itemNum{
+        color: #ef3664;
+       }
+   }
+   .count{
+span{
+    font-size: 14px;
+    line-height: 30px;
+    color: #ef3664;
+    &:first-child{
+        color: black;
+        margin-right: 10px;
+    }
+}
+input{
+    width: 50px;
+    height: 30px;
+    margin-left: 10px;
+}
+   }
+    }
+}

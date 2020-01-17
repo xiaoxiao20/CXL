@@ -52,6 +52,11 @@ $(() => {
                     <div class="pic">
                         <img class="bigpic" src="${val.src}" alt="">
                         <img class="minlogo" src="${val.minpic ? val.minpic : ''}" alt="">
+                        <div class='showCar'>
+                            <span>一键购入</span>
+                            <span>收藏</span>
+                            <span>找同款</span>
+                        </div>
                      </div>
                      <div class="desc">
                         <div class="price-sales clearfix">
@@ -76,6 +81,12 @@ $(() => {
                 </li>`
         }).join('');
         $('.Ulist').html(str);
+        $('.Ulist').find('.showCar').hide();
+        $('.Ulist').find('.pic').mouseenter(function () {
+            $(this).find('.showCar').show();
+        }).mouseleave(function () {
+            $(this).find('.showCar').hide();
+        })
         // 处理页码的选中转态
         $('.pages').children('a').eq(index - 1).addClass('active').siblings().removeClass('active');
     }
@@ -103,12 +114,10 @@ $(() => {
             }
         });
     };
+
     // 右侧推荐商品
     showGoods("../../../server/06.rightgoods.php", $('.right-goods ul'))
-
-
     // screen页
-
     let str = sreenDate.map(function (val, index) {
         let html = val.map(function (val, key) {
             return `<a href="./01.index.html">${val}</a>`

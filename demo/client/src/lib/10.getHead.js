@@ -13,14 +13,14 @@ $(() => {
             $(this).find('a').css({
                 "color": '#999999'
             });
-            $('.ban-left').css('display', 'block').mouseenter(function () {
-                $(this).show();
-                $('.nav-title').find('li').eq(0).css({
-                    "backgroundColor": 'white'
-                });
-                $('.nav-title').find('li').eq(0).find('a').css({
-                    "color": '#999999'
-                });
+            $('.ban-left').show().mouseenter(function () {
+                $('.nav-title').find('li').eq(0).trigger('mouseenter');
+                $(this).find('.erji-rg').show().mouseenter(function () {
+                    // $(this).show();
+                    // $('.ban-left').show();
+                    $('.nav-title').find('li').eq(0).trigger('mouseenter');
+                })
+
             }).mouseleave(function () {
                 $(this).hide();
                 $('.nav-title').find('li').eq(0).css({

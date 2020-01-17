@@ -19,7 +19,7 @@
     <script src="../lib/06.main-content.js"></script>
     <script src="../lib/06.main-content2.js"></script>
 
-    <title>搜款网首页</title>
+    <title>搜款网-首页</title>
 </head>
 
 <body>
@@ -29,6 +29,7 @@
         </div>
         <div class="header-load">
         </div>
+        <div class="xiding"></div>
         <div class="banner1">
             <div class="main4">
                 <div class="ban-left fl">
@@ -118,7 +119,26 @@
     });
     // 004--申请尾部
     $('.footer').load('../../../server/footer.html');
-
+    // 申请吸顶菜单
+    $('.xiding').load('../../../server/06.xiding-memu.html', function () {
+        // console.log(window.scrollY)
+        // 吸顶菜单
+        $('.xiding').hide();
+        $(window).scroll(function () {
+            if (window.scrollY >= 186) {
+                $('.xiding').show();
+                $('.xiding').css({
+                    "position": "fixed",
+                    "top": 0,
+                    "left": 0,
+                    "z-index": 6666,
+                    "border-bottom": "1px solid #e4e1e1"
+                });
+            } else {
+                $('.xiding').hide();
+            }
+        });
+    })
 </script>
 
 </html>

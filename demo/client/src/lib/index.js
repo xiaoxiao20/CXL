@@ -1,33 +1,34 @@
 $(() => {
     // 导航切换
     $('.littleTitle').mouseenter(function () {
-        $(this).next().css('display', 'block')
+        $(this).next().show()
     }).mouseleave(function () {
-        $(this).next().css('display', 'none')
+        $(this).next().hide()
     })
     // 广州站显示隐藏
     $('.adr').mouseenter(function () {
-        $('.memu').css('display', 'block');
-    }).mouseout(function () {
-        $('.memu').css('display', 'none');
+        $('.memu').show();
+    }).mouseleave(function () {
+        $('.memu').hide();
     });
 
     // 二级导航显示隐藏 
-    $('.banner1 .erji-lf').on('mouseenter', 'li', function () {
+    $('.banner1 .erji-lf').unbind('mouseenter').on('mouseenter', 'li', function (e) {
+        // e.preventDefault();
         let num = $(this).index();
-        // console.log(num);
+        console.log(num);
         $('.erji-rg').stop().animate({
             'width': '800px'
         }, 800).mouseenter(function () {
-            $('.erji-lf').find('li').eq(num).trigger('mouseenter');
+            // $('.erji-lf').find('li').eq(num).trigger('mouseenter');
+            $(this).show();
         }).mouseleave(function () {
-            $(this).css({
+            $(this).stop().animate({
                 'width': '0'
-            })
+            }, 800)
         });
     }).on('mouseleave', 'li', function () {
-        let num = $(this).index();
-        $('.erji-rg').eq(num).stop().animate({
+        $('.erji-rg').stop().animate({
             'width': '0'
         }, 800);
     });

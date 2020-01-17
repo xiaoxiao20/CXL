@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>商品列表页</title>
+    <title>搜款网-商品列表页</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -22,6 +22,7 @@
 <body>
     <div class="header-load">
     </div>
+    <div class="xiding"></div>
     <div class="ban-left"></div>
     <div class="descrip">
         <div class="classic clearfix">
@@ -98,6 +99,26 @@
     $('.ban-left').load("../../../server/erji-nav.html", function () {
         $.getScript('../lib/09.erji-nav.js');
         // $('.ban-left').insertBefore($('.ban-center'))
+    });
+    // 申请吸顶菜单
+    $('.xiding').load('../../../server/06.xiding-memu.html', function () {
+        // console.log(window.scrollY)
+        // 吸顶菜单
+        $('.xiding').hide();
+        $(window).scroll(function () {
+            if (window.scrollY >= 186) {
+                $('.xiding').show();
+                $('.xiding').css({
+                    "position": "fixed",
+                    "top": 0,
+                    "left": 0,
+                    "z-index": 66,
+                    "border-bottom": "1px solid #e4e1e1"
+                });
+            } else {
+                $('.xiding').hide();
+            }
+        });
     })
 
 
