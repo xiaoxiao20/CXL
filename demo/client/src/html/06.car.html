@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/06.car.css">
+    <link rel="stylesheet" href="../css/06.car.min.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
     <script src="../lib/jquery-3.4.1(1).js"></script>
+    <script src="../lib/Cookie.js"></script>
+    <script src="../lib/14.mainCart.js"></script>
+
 </head>
 
 <body>
@@ -21,22 +26,123 @@
                 <span>全部商品</span><span class="itemNum">0</span>
             </div>
             <div class="fr count">
-                <span>已选商品(不含运费):</span><span>￥</span><span class="total">0:00</span>
+                <span>已选商品(不含运费):</span><span>￥</span><span class="total">0.00</span>
                 <input type="button" value="结算">
             </div>
         </div>
-        <div class="itemShow"></div>
-        <div class="content-foot"></div>
+        <div class="itemShow">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" class="checkbox1">
+                            <span>全选</span>
+                        </th>
+                        <th>商品信息</th>
+                        <th>批量删除</th>
+                        <th>数量</th>
+                        <th>单价</th>
+                        <th>总价</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+            </table>
+            <ul class="goodsLists">
+                <!-- <li class="list">
+                    <div class="store-box">
+                        <div class="store-name">
+                            <div class="fl">
+                                <input type="checkbox" name="" class="store-btn">
+                                <span class="storeName">旗舰店</span>
+                            </div>
+                            <div class="store-price">￥0.00</div>
+                        </div>
+                    </div>
+                    <div class="shopsDetails" data-item-id="">
+                        <input class="fl check1" type="checkbox" name="">
+                        <div class="desc-pic fl">
+                            <img src="" alt="">
+                        </div>
+                        <div class="desc fl">
+                            <div class="desc-title fl">
+                                <p class="storemsg">宽松假两件拼接衬衣女装2020春季韩版新款百搭设计感小众长袖衬衫</p>
+                                <span class="sales">1件代发</span>
+                            </div>
+                            <div class="size fl">
+                                <span>尺码：</span><span>均码</span>
+                            </div>
+                            <div class="addr fl">地址:女人街8899号店铺</div>
+
+                        </div>
+                        <div class="select-delete fl">
+                            <input type="checkbox" name="" class="select-delete">
+                        </div>
+                        <div class="count fl">
+                            <input class="cut" type="button" value="-">
+                            <input class="total" type="text" value="1">
+                            <input class="add" type="button" value="+">
+                        </div>
+                        <div class="itemPrice fl">￥66.00</div>
+                        <div class="cost fl">￥0.00
+                        </div>
+                        <div class="operation fl">
+                            <span class="move">删除</span>
+                            <span>移入收藏夹</span>
+                        </div>
+                    </div>
+                </li> -->
+            </ul>
+            <div class="null-cart">
+                <span class="iconfont icon-gengduo"></span>
+                <span>您的进货车还是空的，快去选购商品吧\(^o^)/</span>
+            </div>
+        </div>
+        <div class="content-foot">
+            <span class="fl">
+                <input type="checkbox" id="all">
+                <label for="all">全选</label>
+            </span>
+            <p class="fl">
+                <a href="./04.list page.html">继续选购</a>
+            </p>
+
+            <p>
+                <span>档口数量:</span><span class="foot-num1">0</span>
+            </p>
+            <p>
+                <span>商品种类:</span>
+                <span class="foot-num2">0</span>
+                <span>种</span>
+            </p>
+            <p>
+                <span>已选数量:</span>
+                <span class="total-num">0</span>
+                <span>件</span>
+            </p>
+            <p class="sel-dele">
+                <span>批量删除</span>
+            </p>
+            <p class="clear">
+                <span>清空购物车</span>
+            </p>
+            <div class="fr total-sum">
+                <span>商品总金额：</span>
+                <span>￥</span>
+                <span class="final">0.00</span>
+                <span>结算</span>
+            </div>
+        </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+    </div>
 </body>
 <script>
-    // 申请头部
+    // 001--申请头部
     $('.header-load').load('../../../server/dat-head.html', function () {
-        $('.rig-title').append($("<li class='home page'><a href='./ 01.index.html'>搜款网首页</a></li>"))
+        $('.rig-title').append($("<li class='home page'><a href='./01.index.html'>搜款网首页</a></li>"))
         $.getScript('../lib/header.js');
     });
-    // 申请尾部
+    // 002--申请尾部
     $('.footer').load('../../../server/footer.html');
 </script>
 

@@ -29,15 +29,24 @@ $(() => {
             data: "phone=" + val,
             dataType: "json",
             success: function (response) {
-                console.log(response)
+                console.log(response);
                 if (response.status == 'success') {
                     alert(response.msg)
-                    location.href = 'https://www.vvic.com/gz'
+                    Cookie.setItem('phone', $.trim($('#phoneID').val()));
+                    Cookie.setItem("user_id", response.id);
+                    location.href = '../html/01.index.html'
+                    // 如果勾选了免登录复选框，进行cookie相关操作
+                    if ($('#checkbox1').is(":checked")) {
+                        console.log('666')
+                        Cookie.setItem('phone', $.trim($('#phoneID').val()), 7);
+                        Cookie.setItem("user_id", response.id, 7);
+                    };
                 }
                 else {
                     alert(str);
                     return;
                 }
+
             }
         });
     }
@@ -72,12 +81,7 @@ $(() => {
             $.trim($('#phoneID').val()),
             "该用户还没有注册，请前往注册"];
         sendAjax(url1, val1, str1);
-
-        // 如果勾选了免登录复选框，进行cookie相关操作
-        if ($('#checkbox1').is(":checked")) {
-            console.log('666')
-            Cookie.setItem('phone', $.trim($('#phoneID').val()), 2);
-        }
+        // 手机号码登录--13790949924
     });
 
 
@@ -121,7 +125,16 @@ $(() => {
                 console.log(response)
                 if (response.status == 'success') {
                     alert(response.msg)
-                    location.href = 'https://www.vvic.com/gz'
+                    Cookie.setItem('phone', $.trim($('.phoneID').val()));
+                    Cookie.setItem("user_id", response.id);
+                    location.href = '../html/01.index.html'
+                    console.log(response.id);
+                    // 如果勾选了免登录复选框，进行cookie相关操作
+                    if ($('#checkbox2').is(":checked")) {
+                        console.log('666')
+                        Cookie.setItem('phone', $.trim($('.phoneID').val()), 7);
+                        Cookie.setItem("user_id", response.id, 7);
+                    }
                 }
                 else {
                     alert(response.msg);
@@ -129,11 +142,6 @@ $(() => {
                 }
             }
         });
-        // 如果勾选了免登录复选框，进行cookie相关操作
-        if ($('#checkbox2').is(":checked")) {
-            console.log('666')
-            Cookie.setItem('phone', $.trim($('.phoneID').val()), 2);
-        }
     });
 
     // 如果cookie中有值

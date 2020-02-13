@@ -15,20 +15,21 @@
   height: 100%;
 }
 
-.header-load .main1 .content p {
+.header-load .main1 .content .login {
   height: 30px;
   text-align: center;
 }
 
-.header-load .main1 .content p span {
-  display: inline-block;
+.header-load .main1 .content .login span {
+  float: left;
   height: 100%;
-  width: 60px;
+  width: 120px;
   line-height: 30px;
   text-align: left;
+  cursor: pointer;
 }
 
-.header-load .main1 .content p span a {
+.header-load .main1 .content .login span a {
   color: #6c6c6c;
 }
 
@@ -187,20 +188,21 @@
 .header-load .nav .main2 .search .search-bar {
   width: 572.5px;
   margin: 8px 0 8px;
+  position: relative;
 }
 
-.header-load .nav .main2 .search .search-bar .bar {
+.header-load .nav .main2 .search .search-bar form .bar {
   width: 470px;
   height: 40px;
   border: 1px solid #e2dfdf;
   padding-left: 10px;
 }
 
-.header-load .nav .main2 .search .search-bar .bar:focus {
+.header-load .nav .main2 .search .search-bar form .bar:focus {
   border: 1px solid #f96388;
 }
 
-.header-load .nav .main2 .search .search-bar .btn {
+.header-load .nav .main2 .search .search-bar form .btn {
   height: 40px;
   width: 90px;
   color: white;
@@ -208,6 +210,25 @@
   font-size: 14px;
   line-height: 40px;
   text-align: center;
+}
+
+.header-load .nav .main2 .search .search-bar .ss-list {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #c5c3c3;
+  z-index: 888;
+  display: none;
+}
+
+.header-load .nav .main2 .search .search-bar .ss-list li {
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 10px;
 }
 
 .header-load .nav .main2 .search-rig {
@@ -221,13 +242,18 @@
   width: 100px;
   height: 40px;
   border: 1px solid #e2dfdf;
+}
+
+.header-load .nav .main2 .search-rig .car a {
+  display: inline-block;
+  width: 100%;
   text-align: center;
   line-height: 40px;
   font-size: 14px;
   cursor: pointer;
 }
 
-.header-load .nav .main2 .search-rig .car:hover {
+.header-load .nav .main2 .search-rig .car a:hover {
   color: #f96388;
 }
 

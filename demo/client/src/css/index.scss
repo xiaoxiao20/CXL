@@ -173,7 +173,7 @@ img{
                  width: 200px;
                  height: 100%;
                 //  background-color: rgb(224, 224, 9);
-                 margin-right: 10px;
+                 margin-right: 3px;
                  position: relative;
                  .ban3-1{
                     width: 100%;
@@ -293,28 +293,28 @@ img{
      .banner2{
          width: 100%;
          height: 240px;
-
+      
          .main5{
             //  width: 100%;
              height: 100%;
              padding: 0 80px;
-             .ban-left{
+          
+             .ban-left2{
                 width: 160px;
-                height: 100%;
+                height: 240px;
                 background-color: white;
                 overflow: hidden;
-                margin-right: 10px;
+                margin-right: 3px;
                 padding: 0 10px;
-
+                position: relative;
                 .title{
                     width: 100%;
                     font-size: 12px;
                     height: 30px;
                     line-height: 30px;
                 }
-                .memu{
+                .memu2{
                     width: 100%;
-                    height: 184px;
                     a{
                         float: left;
                         width: 48px;
@@ -326,13 +326,13 @@ img{
                      }
                 }
                 .moreMemu{
-                    width: 100%;
+                    width: 160px;
                     height:30px;
-                    background-color: white;
-                    z-index: 999;
-                   
+                    background-color: white; 
                     text-align: center;
-                    span{
+                    position: absolute;
+                   bottom: 0;
+                    .slideMore{
                         display: block;
                         font-size: 12px;
                         color: #6c6c6c;
@@ -341,6 +341,7 @@ img{
                     }
                 }
             }
+   
 .ban2-1{
     width: 990px;
     height: 100%;
@@ -454,13 +455,28 @@ img{
                    .item{
                        width: 222px;
                        height: 335px;
+                       position: relative;
                     //    background-color: orange;
+img{
+    width: 100%;
+    height: 100%;
+}
+   
+    .price{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+         height: 40px;
+        font-size: 16px;
+        background-color: rgba($color: #ffffff, $alpha:0.75);
+        text-align: center;
+        line-height:40px;
+         color: #ef3664;
+      
+     }
 
                    }
-                   // img{
-                   //     width: 100%;
-                   //     height: 100%;
-                   // }
                }
                .current3{
                 display: flex;
@@ -474,5 +490,261 @@ img{
     
 
   
+     }
+     .flag_shop{
+        padding: 0 80px;
+        height: 570px;
+        .flag_title{
+            width: 100%;
+            height: 33px;
+            .title{
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 33px;
+            }
+            .pages{
+                font-size: 14px;
+                color: #9c9c9c;
+                .current_page{
+                    color: #ef3664;
+                }
+                .btn{
+                    cursor: pointer;
+                    &:hover{
+                        color: #ef3664;
+                    }
+                }
+            }
+        }
+        .flag_shop_list{
+        background-color: white;
+            width: 100%;
+            height: 540px;
+            .lists{
+                height: 100%;
+                display: none;
+                .itemShop{
+                    width: 384px;
+                    height: 260px;
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+                    &:nth-of-type(1){
+                        margin-left: 0;
+                    }
+                    &:nth-of-type(4){
+                        margin-left: 0;
+                        margin-bottom: 0;
+                    }
+                    &:nth-of-type(5){
+                        margin-bottom: 0;
+                    }
+                    &:nth-of-type(6){
+                        margin-bottom: 0;
+                    }
+                  a{
+                      display: block;
+                      width: 100%;
+                      height: 100%;
+                      position: relative;
+                      img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .itemShop_desc{
+                        height: 64px;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 20px;
+                        background-color: rgba($color: #fff, $alpha: 0.8);
+                        text-align: center;
+                        p{
+                           &:nth-of-type(1){
+                               font-size: 22px;
+                               color: #333;
+                               font-weight: 800;
+                               padding: 9px 0 2px;
+                           }
+                           &:nth-of-type(2){
+                            font-size: 14px;
+                            color: #333;
+                        }
+                        }
+                    }
+                  }
+                }
+            }
+            .active3{
+                display: block;
+            }
+        }
+     }
+     .hot_shop{
+        padding: 0 80px;
+         margin-bottom: 20px;
+         .hot_shop_title{
+            height: 33px;
+            .title{
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 33px;
+            }
+            .pages{
+                font-size: 14px;
+                color: #9c9c9c;
+                .current_page{
+                    color: #ef3664;
+                }
+                .btn{
+                    cursor: pointer;
+                    &:hover{
+                        color: #ef3664;
+                    }
+                }
+            }
+         }
+         .hot_shop_lists{
+             width: 100%;
+             height: 770px;
+             .hot_shop_list{
+                 width: 100%;
+                 height: 100%;
+                 display: none;
+                .hot_shop_item{
+                    height: 375px;
+                    width: 222px;
+                    margin-left: 15px;
+                    margin-bottom: 20px;
+                    background-color: white;
+                    &:nth-of-type(1){
+                        margin-left: 0px;
+                    }
+                    &:nth-of-type(6){
+                        margin-left: 0px;
+                    }
+                     .hot_shopPic{
+                         width: 222px;
+                         height: 333px;
+                             cursor: pointer;
+                             img{
+                                 width: 100%;height: 100%;
+                                 display: none;
+                             }
+                             .imgshow{
+                                 display: inline-block;
+                             }
+                     }
+                     .hot_shopdesc{
+                         padding: 0 5px;
+                         height: 40px;
+                         .price{
+                             font-size: 16px;
+                             color: #ef3664;
+                             line-height: 40px;
+                         }
+                         .hot_shop_name{
+                             font-size: 16px;
+                             line-height: 40px;
+                             color: #6c6c6c;
+                         }
+                     }
+                 }
+             }
+            .active4{
+                display: block;
+            }
+         }
+     }
+     .index_shops{
+         margin-bottom: 20px;
+
+         padding: 0 80px;
+         .index_shops_title{
+             width: 100%;
+        height: 33px;
+        .title{
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 33px;
+        }
+        .pages{
+            font-size: 14px;
+            color: #9c9c9c;
+            .current_page{
+                color: #ef3664;
+            }
+            .btn{
+                cursor: pointer;
+                &:hover{
+                    color: #ef3664;
+                }
+            }
+        }
+    }
+    .index_shops_lists{
+        width: 100%;
+        height: 600px;
+        .index_shops_list{
+            width: 100%;
+            height: 100%;
+            .item{
+                width: 188px;
+                height: 285px;
+                background-color: white;
+                margin-right: 8px;
+                margin-bottom: 7px;
+                &:nth-of-type(6){
+                    margin-right: 0;
+                }
+                &:nth-of-type(12){
+                    margin-right: 0;
+                }
+                img{
+                width: 100%;
+                height: 100%;
+                display: none;
+                }
+                .imgshow{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+     }
+     .foot-bg{
+         width:100%;
+         height: 120px;
+         text-align: center;
+         img{
+             width: 100%;
+             height: 100%;
+         }
+     }
+     .foot-desc{
+         height: 235px;
+         border-bottom: 1px solid #c9c7c7;
+         background-color: white;
+         .lists{
+             padding: 45px 80px;
+             display: flex;
+             li{
+                 flex: 1;
+                 p{
+                     color: #9c9c9c;
+                     font-size: 20px;
+                     font-weight: 800;
+                 }
+                 .list{
+                     margin-top: 20px;
+                     a{
+                         display: inline-block;
+                         width: 80px;
+                         height: 18px;
+                         margin-bottom: 16px;
+                         color: #6c6c6c;
+                     }
+                 }
+             }
+         }
      }
 }

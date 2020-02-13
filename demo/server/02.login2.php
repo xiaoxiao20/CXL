@@ -19,6 +19,7 @@ if(mysqli_num_rows($result)==0){
     // 05--继续检查该密码是否正确
     $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
      $password1 = $data[0]["password"];
+     $id = $data[0]["id"];
     //  echo "$password1,.'好的'$pwd";
       if($password1!=$pwd){
          echo '{
@@ -27,10 +28,7 @@ if(mysqli_num_rows($result)==0){
          }';
       }
       else{
-         echo '{
-             "status":"success",
-             "msg":"登录成功"
-         }';
+        echo "{\"status\":\"success\",\"msg\":\"登录成功！！！\",\"id\":$id}";
       } 
  }
 ?>

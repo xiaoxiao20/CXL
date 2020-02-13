@@ -12,10 +12,14 @@
     <link rel="stylesheet" href="../css/03.list page.min.css">
     <link rel="stylesheet" href="../font/iconfont.css">
     <link rel="stylesheet" href="../css/04.erji.nav.css">
+    <link rel="stylesheet" href="../css/07.right-nav.css">
     <!-- <link rel="stylesheet" href="../css/03.list page.css"> -->
     <script src="../lib/jquery-3.4.1(1).js"></script>
     <script src="../lib/07.list page.js"></script>
+    <script src="../lib/data.js"></script>
+    <script src="../lib/13.car.js" type="module"></script>
     <script src="../lib/screen.js"></script>
+    <script src="../lib/Cookie.js"></script>
 
 </head>
 
@@ -87,22 +91,23 @@
         <ul class="clearfix">
         </ul>
     </div>
+    <div class="right-nav"></div>
     <div class="footer"></div>
 </body>
 <!-- 001--申请头部 -->
 <script src="../lib/10.getHead.js"></script>
 <script>
-
     // 002--申请尾部
     $('.footer').load('../../../server/footer.html');
-    // 002--申请二级导航
+    // 003--申请二级导航
     $('.ban-left').load("../../../server/erji-nav.html", function () {
         $.getScript('../lib/09.erji-nav.js');
         // $('.ban-left').insertBefore($('.ban-center'))
     });
-    // 申请吸顶菜单
+    // 004--申请吸顶菜单
     $('.xiding').load('../../../server/06.xiding-memu.html', function () {
         // console.log(window.scrollY)
+        $.getScript('../lib/index.js');
         // 吸顶菜单
         $('.xiding').hide();
         $(window).scroll(function () {
@@ -112,6 +117,7 @@
                     "position": "fixed",
                     "top": 0,
                     "left": 0,
+                    "right": 0,
                     "z-index": 66,
                     "border-bottom": "1px solid #e4e1e1"
                 });
@@ -119,8 +125,11 @@
                 $('.xiding').hide();
             }
         });
-    })
-
+    });
+    // 005--申请侧边导航
+    $('.right-nav').load('../../../server/right-nav.html', function () {
+        $.getScript('../lib/13.car.js');
+    });
 
 </script>
 

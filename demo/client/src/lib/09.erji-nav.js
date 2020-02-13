@@ -5,7 +5,7 @@ $(() => {
         // 01--拼接左边栏
         let strA = data[0].map(function (val, index) {
             let html1 = val.memu.map(function (value, key) {
-                return `<a href='###'>${value}</a>`
+                return `<a href='../html/04.list page.html'>${value}</a>`
             }).join('');
             return ` <li>
                 <p>${val.title}</p>${html1}

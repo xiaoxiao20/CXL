@@ -39,8 +39,16 @@ $(() => {
             data: `page=${index}&type=${type}`,
             dataType: "json",
             success: function (response) {
-                console.log(response);
+                // console.log(response);
                 randler(response, index);
+                // 点击图片跳转到详情页
+                $('.Ulist').on('click', '.bigpic', function () {
+                    console.log("aaaaaaaaaaaaaaaaaa")
+                    let price = $(this).parent().next().find('.price').text().slice(1);
+                    let title = encodeURI($(this).parent().next().find('.title').children('a').text());
+                    let goods_id = $(this).parents('.item').data('goods-id');
+                    location.href = `./05.details.html?src=${$(this).attr('src')}&price=${price}&title=${title}&goods_id=${goods_id}`;
+                })
             }
         });
 
@@ -48,12 +56,12 @@ $(() => {
     // 001--数据渲染
     function randler(data, index) {
         let str = data.map(function (val, key) {
-            return ` <li>
+            return ` <li class="item" data-goods-id=${val.id}>
                     <div class="pic">
                         <img class="bigpic" src="${val.src}" alt="">
                         <img class="minlogo" src="${val.minpic ? val.minpic : ''}" alt="">
                         <div class='showCar'>
-                            <span>一键购入</span>
+                            <span class="addCart">一键购入</span>
                             <span>收藏</span>
                             <span>找同款</span>
                         </div>
@@ -65,8 +73,8 @@ $(() => {
                         <p class="title">
                             <a href="./01.index.html">${val.title}</a>
                         </p>
-                        <div class="addr clearfix">
-                            <span class="adr">${val.adr}</span><span class="j-btn">${val.j_clip_button}</span>
+                        <div class="address clearfix">
+                            <span class="adr1">${val.adr}</span><span class="j-btn">${val.j_clip_button}</span>
                         </div>
                         <div class="foot">
                         <span>
@@ -82,8 +90,9 @@ $(() => {
         }).join('');
         $('.Ulist').html(str);
         $('.Ulist').find('.showCar').hide();
+        $('.Ulist').find('.bigpic').css('cursor', 'pointer')
         $('.Ulist').find('.pic').mouseenter(function () {
-            $(this).find('.showCar').show();
+            $(this).find('.showCar').show().find('span').css('cursor', 'pointer');
         }).mouseleave(function () {
             $(this).find('.showCar').hide();
         })
@@ -103,10 +112,11 @@ $(() => {
                 let str = response.map(function (val, key) {
                     return ` <li>
                             <div class="pic">
-                                <img src="${val.src}" alt="">
-                            </div>
+                                <img class="bigpic" src="${val.src}" alt="">
+                             
+                                </div>
                             <div class="desc clearfix">
-                                <span class="price fl">${val.price}</span><span class="addr fr">${val.addr}</span>
+                                <span class="price fl">￥${val.price}</span><span class="addr fr">${val.addr}</span>
                             </div>
                         </li>`
                 }).join('');
@@ -156,7 +166,6 @@ $(() => {
             $(this).text('更多');
         }
     });
-
 
     // 数据获取
     // let arrx = [];

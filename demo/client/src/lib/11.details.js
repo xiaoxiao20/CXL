@@ -1,6 +1,8 @@
+
 $(() => {
 
-
+    let phone = Cookie.getItem("phone");
+    let user_id = Cookie.getItem("user_id");
     // 小图片的渲染
     let srcStr = src[0].minPic.map(function (val, key) {
         return `<li class="${key == 0 ? 'active' : ''}">
@@ -19,6 +21,22 @@ $(() => {
 </a>`
     }).join('');
     $('.links-foot').html(str);
+
+    // 列表页跳转到详情页的数据渲染
+    let urlStr = decodeURI(location.search).slice(1);
+    let urlArr = urlStr.split('&');
+    let arr = urlArr.map(function (val, key) {
+        return val.split('=')[1];
+    });
+    console.log(arr)// ["//img.vvic.com/1578116501798_875109.jpeg", "55", "2020春装新款~实拍~小视频~法式气质荷叶边褶皱长袖打底连衣裙", "242"]
+    if (arr.length != 1) {
+        $('.minbox,.bigbox').find('img').attr('src', arr[0]);
+        $('.minpics').find('ul').find('li').eq(0).find('img').attr('src', arr[0]);
+        $('.priceBox').find('.price1').text('￥' + (arr[1] * 1).toFixed(2));
+        $('.title').text(arr[2]);
+        $('.goods-size').find('.size-price').text(arr[1] * 1)
+        $('.minpic').attr('data-goods-id', arr[3]);
+    }
 
     // list小图片高亮
     $('.list').on('click', 'li', function () {
@@ -106,9 +124,10 @@ $(() => {
 
     // 价格的变动,输入价格计算总价
     let unitNum = 0;
-    let itemcost = 58;
+    let itemcost = $('.priceBox').find('.price1').text().slice(1) * 1;
+    console.log(itemcost)
     function totalCost(unitNum, itemcost) {
-        $('.total').each(function () {
+        $('.total1').each(function () {
             unitNum += $(this).val() * 1;
         });
         $('.units').text(unitNum);
@@ -117,14 +136,14 @@ $(() => {
         unitNum = 0;
     };
     // 输入值的时候改变
-    $('.total').change(function (e) {
+    $('.total1').change(function (e) {
         e.preventDefault();
         totalCost(unitNum, itemcost);
     });
     // 点击计算价格
     let val2 = 0;
     let val3 = 0;
-    $('.count').find('.cut').unbind('click').click(function (e) {
+    $('.count').find('.cut1').unbind('click').click(function (e) {
         val2 = $(this).next().val() * 1 - 1;
         if (val2 - 1 < 0) {
             val2 = 0;
@@ -132,12 +151,138 @@ $(() => {
         $(this).next().val(val2);
         totalCost(unitNum, itemcost);
     });
-    $('.count').find('.add').unbind('click').click(function (e) {
+    $('.count').find('.add1').unbind('click').click(function (e) {
         val3 = $(this).prev().val() * 1 + 1;
         $(this).prev().val(val3);
         totalCost(unitNum, itemcost);
     });
+    function getCartData() {
+        /* 接口：cart.php?type=get&user_id=xxx*/
+        $.ajax({
+            type: "get",
+            url: "../../../server/07.cart.php",
+            data: `type=get&user_id=${user_id}`,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                /* 整理前[{商品},{商品},{}] */
+                /* 需要对数据进行处理(把数据按照店铺名称来整理) */
+                /* 整理后[{店铺},{店铺},{}] */
+                let storeNames = [];
+                let storeData = [];
+                data.forEach(ele => {
+                    if (!storeNames.includes(ele.shopName)) storeNames.push(ele.shopName);
+                });
 
+                storeNames.forEach(ele => {
+                    storeData.push({ "shopName": ele, "goods": [] })
+                });
+
+                data.forEach(ele => {
+                    let currentStoreName = ele.shopName;
+                    storeData.forEach(item => {
+                        if (item.shopName == currentStoreName) {
+                            item.goods.push(ele);
+                        }
+                    })
+                });
+                cartRenderUI(storeData);
+            }
+        });
+    };
+    /* 侧边栏购物车数据内容渲染 */
+    function cartRenderUI(_data) {
+        console.log(_data);
+        /* 创建标签 */
+        let html = _data.map(ele => {
+
+            let tpl = ele.goods.map(ele => {
+                let price = ele.num * ele.price;
+                return `
+                            <div class="shopsDetails" data-item-id=${ele.goods_id}>
+                                <input class="fl check1" type="checkbox" name="">
+                                <div class="desc-pic fl">
+                                    <img src="${ele.src}" alt="">
+                                </div>
+                                <div class="desc fl">
+                                    <p class="storemsg">${ele.title}</p>
+                                    <div class="count">
+                                        <input class="cut" type="button" value="-">
+                                        <input class="total" type="text" value="${ele.num}">
+                                        <input class="add" type="button" value="+">
+                                    </div>
+                                    <div class="cost-del">
+                                        <span class="fl cost">￥${price}.00</span>
+                                        <span class="fr delete">删除</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+            }).join("");
+            return `<li class="store">
+                        <div class="store-name">    
+                            <div class="fl">
+                                <input type="checkbox" name="" class="check-store">
+                                <span class="storeName">${ele.shopName}</span>
+                            </div>
+                            <div class="fr store-price">￥0.00</div>
+                         </div>
+                        ${tpl}
+                    </li>`
+        }).join("");
+
+        /* 设置标签 */
+        $(".stores").html(html);
+    };
+    // 003---获取购物车中的数量，显示数量
+    function getGoodsNums() {
+        $.ajax({
+            type: "get",
+            url: "../../../server/07.cart.php",
+            data: `type=getCount&user_id=${user_id}`,
+            dataType: "json",
+            success: function (response) {
+                if (response.status == 'success') {
+                    $('.total-nums').text(response.count);
+                }
+            }
+        });
+    };
+    // 点击加入购物车的时候，判断此时的件数，不为0则加入购物车
+    $('.send').click(function () {
+        let itemNum = $('.sum').find('.units').text();
+        if (itemNum == 0) {
+            alert('您还没有选购，请继续选购~');
+        }
+        else {
+            console.log('++++++')
+            // 发送请求加入购物车
+            // // 检查该用户是否登录
+            if (!phone || !user_id) {
+                location.href = '../html/03.login.html';
+            }
+            else {
+                // 用户已经登录,发送网络请求，根据goods_id把商品信息加入购物车
+                let goods_id = $('.minpic').data('goods-id');
+                let more = $('.sum').find('.units').text() * 1;
+                $.ajax({
+                    type: "get",
+                    url: "../../../server/07.cart.php",
+                    data: `type=addmore&goods_id=${goods_id}&user_id=${user_id}&more=${more}`,
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status == 'success') {
+                            alert('加入成功，请继续选购~')
+                            getCartData();
+                            getGoodsNums();
+                            window.location.reload();
+                        }
+
+                    }
+                });
+            };
+        }
+    })
 
 
 })

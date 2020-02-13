@@ -1,6 +1,8 @@
 $(() => {
     $('.header-load').load('../../../server/header.html', function () {
         $.getScript('../lib/header.js');
+        $.getScript('../lib/index.js');
+
         $('.nav-title').find('li').eq(0).find('a').css({
             "color": 'white'
         });

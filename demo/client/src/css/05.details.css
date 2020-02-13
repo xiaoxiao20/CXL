@@ -292,7 +292,7 @@
 }
 
 .content1 .desc .sum {
-  width: 100%;
+  width: 390px;
   height: 48px;
   display: flex;
   border: 1px solid #e0dede;
@@ -301,8 +301,7 @@
 
 .content1 .desc .sum .sum-left {
   height: 100%;
-  width: 390px;
-  border-right: 1px solid #e0dede;
+  width: 100%;
   background-color: #F4F4F4;
   text-align: center;
 }
@@ -319,18 +318,6 @@
   margin-right: 20px;
   font-weight: normal;
   font-size: 16px;
-}
-
-.content1 .desc .sum .sum-right {
-  text-align: center;
-  flex: 1;
-}
-
-.content1 .desc .sum .sum-right span {
-  line-height: 48px;
-  font-size: 16px;
-  color: #999999;
-  cursor: pointer;
 }
 
 .content1 .desc .send {
@@ -372,4 +359,9 @@
 .content1 .desc .foot .phone .iconfont {
   font-size: 30px;
   margin-right: 5px;
+}
+
+.content1 .det-right {
+  flex: 1;
+  margin-left: 100px;
 }

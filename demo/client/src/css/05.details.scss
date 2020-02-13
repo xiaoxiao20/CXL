@@ -1,5 +1,4 @@
 .content1{
-    // width: 100%;
     border-top: 1px solid #e4e1e1;
     border-bottom:1px solid #e4e1e1 ;
     padding: 20px 80px;
@@ -245,15 +244,14 @@ img{
             cursor: pointer;
         }
         .sum{
-            width: 100%;
+            width: 390px;
             height: 48px;
             display: flex;
             border: 1px solid #e0dede;
             margin-top: 20px;
             .sum-left{
                 height: 100%;
-                width: 390px;
-                border-right: 1px solid #e0dede;
+                width: 100%;
                 background-color: #F4F4F4;
                 text-align: center;
                 span{
@@ -268,16 +266,6 @@ img{
                         font-weight: normal;
                         font-size: 16px;
                     }
-                }
-            }
-            .sum-right{
-                text-align: center;
-                flex: 1;
-                span{
-                    line-height: 48px;
-                    font-size: 16px;
-                    color: #999999;
-                    cursor: pointer;    
                 }
             }
         }
@@ -317,5 +305,9 @@ img{
             }
             
         }
+    }
+    .det-right{
+        flex: 1;
+        margin-left: 100px;
     }
 }

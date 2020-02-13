@@ -1,0 +1,233 @@
+
+.right-nav{
+    width: 35px;
+    // height: 318px;
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    z-index: 9999;
+    .current{
+        width: 15px;
+        padding: 5px 10px;
+        background-color: #f5f5f5;
+        margin-bottom: 10px;
+    cursor: pointer;
+    &:hover{
+        color: white;
+        background-color: #f88ca5;
+    }
+        p{
+            &:first-child{
+                font-size: 16px;
+            }
+        }
+        .desc{
+            font-size: 14px;
+            // color: #6c6c6c;
+            // a{
+            //     color: #6c6c6c;
+            // }
+        }
+        .current_twoCode{
+            height: 35px;
+            font-size: 24px;
+            line-height: 35px;
+            text-align: center;
+        }
+          .total-nums{
+              width: 20px;
+              height: 20px;
+              border-radius: 5px;
+              background-color: red;
+              color: white;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 20px;
+              text-align: center;
+          }
+        }
+        .hide_cart{
+            display: none;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            background-color: white;
+            .hide-cart-addr{
+                height: 50px;
+                width: 100%;
+                font-size: 20px;
+                line-height: 50px;
+                margin-left: 20px;
+            }
+        .select-all{
+            height: 25px;
+            font-size: 14px;
+            color: #666666;
+            padding: 0 15px;
+            background-color: #fcfafa;
+            a{
+                color: #666666;
+            }
+        }
+        .sorts-details{
+            padding: 0 15px;
+            background-color: #faf8f8;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 80px;
+            bottom:63px;
+            max-height: 520px;
+            min-height: 100px;
+            overflow: hidden;
+            .stores{
+                width: 100%;
+                height: 520px;
+                overflow: auto;
+               
+                .store{
+            width: 100%;
+            .store-name{
+                height: 30px;
+                padding:0 5px;
+                font-size: 14px;
+                line-height: 30px;
+                background-color:#e4e2e2;
+                .storeName{
+                    margin-left: 10px;
+                }
+            }
+            .shopsDetails{
+                width: 100%;
+                height:120px;
+                .check1{
+                    margin-top: 45px;
+                    margin-left: 5px;
+                }
+                .desc-pic{
+                    width: 70px;
+                    height: 70px;
+                    // background-color: yellow;
+                    margin: 15px 15px;
+                    img{
+                width: 100%;height: 100%;
+                    }
+                }
+                .desc{
+                    padding-top: 10px;
+                    .storemsg{
+                        font-size: 12px;
+                        width: 130px;
+                        color: #6c6c6c;
+                    }
+                    .count{
+                        height: 22px;
+                        display: inline-block;
+                        font-size: 0;
+                        .cut{
+                            width: 20px;
+                            height: 100%;
+                            cursor: pointer;
+                            background-color: rgb(240, 236, 236);
+                        }
+                        .total{
+                            width: 40px;
+                            height: 100%;
+                            text-align: center;
+                            background-color: white;
+                        }
+                        .add{
+                            width: 20px;
+                            cursor: pointer;
+                            height: 100%;
+                            background-color: rgb(240, 236, 236);
+                        }
+                    }
+                    .cost-del{
+                        width: 100%;
+                        height: 18px;
+                        .cost{
+                            width: 100px;
+                            color: #f88ca5;
+                        }
+                        .delete{
+                            cursor: pointer;
+                        }
+                    }
+                   
+                }
+            }
+                }
+            }
+        }
+        .nothing{
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            font-size: 16px;
+            color: #6c6c6c;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 80px;
+            bottom:63px;
+            z-index:666;
+            
+        }
+        .btm{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: 777;
+            .total{
+                padding: 0 15px;
+                height: 25px;
+                background-color: white;
+                p{
+                    font-size: 14px;
+                    line-height: 25px;
+                   &:first-child{
+                       color: #6c6c6c;
+    
+                   }
+                   .num{
+                       margin-left: 10px;
+              font-weight: 700;                       color: #f88ca5;
+
+                   }
+                   &:nth-of-type(2){
+                       color: #f88ca5;
+                       .total-cost{
+                           margin-left: 5px;
+                           font-weight: 700;
+                       }
+                   }
+                }
+            }
+            .check{
+                width: 100%;
+                background-color: #e5e5e5;
+                text-align: center;
+                a{
+                    display: inline-block;
+                    width: 100%;
+                    height: 38px;
+                color: #202020;
+                font-size: 14px;
+                line-height: 38px;
+                }
+            }
+        }
+      
+       
+        }
+    .turnBack{
+        height: 20px;
+        font-size: 24px;
+        text-align: center;
+        line-height: 20px;
+    }
+}

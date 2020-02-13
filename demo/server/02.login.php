@@ -15,10 +15,8 @@ if(mysqli_num_rows($result)==0){
         "msg":"该用户还没有注册，请前往注册"
     }';
 }else{
-    
-    echo '{
-        "status":"success",
-        "msg":"登录成功"
-    }';
+    $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    $id = $data[0]["id"];
+    echo "{\"status\":\"success\",\"msg\":\"登录成功！！！\",\"id\":$id}";
 }
 ?>

@@ -60,7 +60,7 @@ $(() => {
                 console.log(response);
                 if (response.status == 'success') {
                     alert(response.msg);
-                    location.href = "https://www.vvic.com/gz";
+                    location.href = "../html/01.index.html";
                 }
                 else {
                     alert(response.msg);
